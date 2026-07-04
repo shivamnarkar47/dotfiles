@@ -5,10 +5,12 @@ font pango:JetBrainsMono Nerd Font Mono 10
 
 # ─── Autostart ──────────────────────────────────────────────────────────────
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -e -n -c 1e1e2e
 exec --no-startup-id nm-applet
 exec --no-startup-id albert
-exec --no-startup-id picom -b
+exec --no-startup-id picom -b --config /home/vagabond/.config/picom/picom.conf
 exec --no-startup-id dunst
 exec --no-startup-id source ~/.fehbg
 exec_always --no-startup-id ~/.local/bin/set-monitors
