@@ -1,6 +1,6 @@
 # dotfiles
 
-Stow-managed configs for nvim, zsh, git.
+Stow-managed configs for nvim, zsh, git, hypr.
 
 ## Quick Start
 
@@ -12,7 +12,7 @@ sudo apt install stow  # Debian/Ubuntu
 # Clone & stow
 git clone https://github.com/shivamnarkar47/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-stow nvim zsh git
+stow nvim zsh git hypr
 ```
 
 ## Structure
@@ -21,20 +21,21 @@ stow nvim zsh git
 dotfiles/
 ├── nvim/   → ~/.config/nvim
 ├── zsh/    → ~/.zshrc
-└── git/    → ~/.gitconfig
+├── git/    → ~/.gitconfig
+└── hypr/   → ~/.config/hypr
 ```
 
 ## Managing
 
 ```bash
 # Stow all
-stow nvim zsh git
+stow nvim zsh git hypr
 
 # Unstow single
-stow -D nvim
+stow -D hypr
 
 # Restow (update links)
-stow -R nvim
+stow -R hypr
 ```
 
 ## Update from machine
@@ -45,3 +46,7 @@ git add -A
 git commit -m "update"
 git push
 ```
+
+## Hypr Notes
+
+The Hypr config uses ML4W configuration with Lua scripting for monitor setup.
