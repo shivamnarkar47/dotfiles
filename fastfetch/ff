@@ -1,0 +1,8 @@
+#!/bin/bash
+rm -rf /tmp/ff-album
+mkdir -p /tmp/ff-album
+
+WALLPAPER=$(gsettings get org.gnome.desktop.background picture-uri | sed "s|'file://||;s|'$||")
+[ -f "$WALLPAPER" ] && cp "$WALLPAPER" /tmp/ff-album/thumb.jpg
+
+exec fastfetch --config ~/.config/fastfetch/config.jsonc "$@"
